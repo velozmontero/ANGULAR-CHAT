@@ -1,0 +1,165 @@
+html,body {
+	margin:0;
+	padding:0;
+	height:100%; /* needed for container min-height */
+}
+
+#myinputmsg{
+	height: 75px;
+}
+
+.lola-container{
+    background-color: #eee;
+    border-radius: 0;
+    padding: 0px;
+    width: 40%;
+    position:relative; /* needed for footer positioning*/
+	margin:0 auto; /* center, not in IE5 */
+	height:auto !important; /* real browsers */
+	height:100%; /* IE6: treaded as min-height*/
+	min-height:100%; /* real browsers */
+	overflow: hidden;
+}
+
+#nav {
+	height: 65px;
+	width: 100%;
+	background-color:#222;
+}
+
+.slide-in{
+	float: right;
+	height: 100%;
+	width: 45px;
+    background: url(slide-in.png) no-repeat right center;
+    padding: 3px 25px 3px 25px;     /* Use the same right padding (60) in jQ! */
+
+	-webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+.rotate-180 {
+    -moz-transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+}
+
+.txt-in{
+	z-index: 1001;
+    bottom: 0;
+    position:absolute;
+    width: 100%;
+    background-color:white;
+    border:2px solid #dcdcdc !important;
+    cursor:pointer;
+    color:#ACA8A8;
+    font-family:'Montserrat', sans-serif;
+    font-size:26px !important;
+    font-weight:bold;
+    padding:17px 30px !important;
+    text-align: left;
+    text-decoration:none;      
+}
+    
+.txt-in:hover {
+    background-color:rgba(153, 153, 153, 0.27);
+}
+
+.name-text{
+    position: absolute;
+    top: 45%;
+    width: 100%;
+    background-color:white;
+    border:2px solid #dcdcdc !important;
+    display:inline-block;
+    cursor:pointer;
+    color:#ACA8A8;
+    font-family:'Montserrat', sans-serif;
+    font-size:26px !important;
+    font-weight:bold;
+    padding:17px 59px !important;
+    text-align: center;
+    text-decoration:none;    
+}    
+
+.name-text:hover {
+    background-color:rgba(153, 153, 153, 0.27);
+}
+
+.typing{
+	color: #4A9CDE;
+}
+
+.message-holder{
+	position: relative;
+    width: 100% !important;
+    overflow-y: auto;
+    overflow-x: hidden;
+    word-wrap: break-word;
+    display:inline-block;
+    color:#716E6E;
+    font-family: Cardo;
+	font-size: 24px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+	line-height: 26.4px;
+    padding:17px 30px !important;
+    text-decoration:none;     
+}
+
+.alert{
+    background-color: rgba(197, 74, 74, 0.42) !important;
+    transition: ease-in;
+}
+
+.enter{
+    background: url(http://velozmontero.fvi-grad.com/chat/enter.png) white no-repeat right -45px center;
+    padding: 3px 60px 3px 4px;     /* Use the same right padding (60) in jQ! */
+    transition: background 0.4s;
+}
+
+.enter.x  { background-position: right 5px center; } /* (jQ) Show icon */
+.enter.onX{ cursor: pointer; }              /* (jQ) hover cursor style */
+.enter::-ms-clear {display: none; width:0; height:0;} /* Remove IE default X */
+
+.send{
+    background: url(http://velozmontero.fvi-grad.com/chat/send.png) white no-repeat right -45px center;
+    padding: 3px 60px 3px 4px;     /* Use the same right padding (60) in jQ! */
+    transition: background 0.4s;
+}
+
+.send.y  { background-position: right 5px center; } /* (jQ) Show icon */
+.send.onY{ cursor: pointer; }              /* (jQ) hover cursor style */
+.send::-ms-clear {display: none; width:0; height:0;} /* Remove IE default Y */
+
+@media only screen and (max-width: 700px){
+    .lola-container{
+        position: relative !important;
+        background-color: #eee;
+        border-radius: 0;
+        width: 100%;
+        height: 100%;
+    }
+    
+	.scroller{
+		position: relative;
+		
+		width: 100% !important;
+		overflow-y: auto;
+		overflow-x: hidden;
+	}
+	
+	.slide-in{	
+		padding: 3px 25px 3px 25px;     /* Use the same right padding (60) in jQ! */
+	}
+	
+    .name-text{
+		padding:17px 40px !important;
+		font-size:22px !important;  
+	}    
+}
+
