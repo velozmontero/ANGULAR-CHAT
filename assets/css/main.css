@@ -75,7 +75,7 @@
 
 	html, body {
 		height: 100%;
-		overflow-x: hidden;
+	
 		width: 100%;
 	}
 
@@ -923,76 +923,6 @@
 		opacity: 1.0;
 	}
 
-/* Button */
-
-	input[type="submit"],
-	input[type="reset"],
-	input[type="button"],
-	button,
-	.button {
-		-moz-appearance: none;
-		-webkit-appearance: none;
-		-ms-appearance: none;
-		appearance: none;
-		-moz-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, opacity 0.2s ease-in-out;
-		-webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, opacity 0.2s ease-in-out;
-		-ms-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, opacity 0.2s ease-in-out;
-		transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, opacity 0.2s ease-in-out;
-		background-color: #1cb495;
-		border-radius: 6px;
-		border: 0;
-		color: #ffffff !important;
-		cursor: pointer;
-		display: inline-block;
-		font-weight: 700;
-		height: 2.75em;
-		line-height: 2.75em;
-		padding: 0 1.125em;
-		text-align: center;
-		text-decoration: none;
-		white-space: nowrap;
-	}
-
-		input[type="submit"]:hover,
-		input[type="reset"]:hover,
-		input[type="button"]:hover,
-		button:hover,
-		.button:hover {
-			background-color: #1fcaa7;
-		}
-
-		input[type="submit"]:active,
-		input[type="reset"]:active,
-		input[type="button"]:active,
-		button:active,
-		.button:active {
-			background-color: #199e83;
-		}
-
-		input[type="submit"].disabled, input[type="submit"]:disabled,
-		input[type="reset"].disabled,
-		input[type="reset"]:disabled,
-		input[type="button"].disabled,
-		input[type="button"]:disabled,
-		button.disabled,
-		button:disabled,
-		.button.disabled,
-		.button:disabled {
-			opacity: 0.5;
-		}
-
-		@media screen and (max-width: 480px) {
-
-			input[type="submit"],
-			input[type="reset"],
-			input[type="button"],
-			button,
-			.button {
-				padding: 0;
-			}
-
-		}
-
 /* Header */
     .image{
         background-image: url(../../images/happy-lis.png);
@@ -1185,7 +1115,7 @@
 		}
 
 #myinputmsg{
-	height: 75px;
+	width: 100%;
 }
 
 #nav {
@@ -1471,8 +1401,23 @@
     overflow-y: hidden;
 }
 
-.md-button.md-fab.md-mini {
-      line-height: 4rem;
-      width: 4rem;
-      height: 4rem;
+.btnEmoji{
+    display: inline-block !important;
+    background: transparent;
+    position: relative !important;
+}
+
+.btnEmoji .label{
+    display: block !important;
+    position: relative!important;
+    opacity: 0.54;
+}
+
+button{
+      border: 0 !important;
+      background: transparent;
+}
+
+button:hover{
+      background: rgba(0, 0, 0, 0.43);
 }

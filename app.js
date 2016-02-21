@@ -3,6 +3,10 @@ angular
     .controller('MainCtrl', MainCtrl);
     
 function MainCtrl() {}
-
-angular.module('emojiApp', ['ngMaterial']);
  
+var eApp = angular.module("eApp", ['ngSanitize', 'emojiApp']);
+
+emojiApp.controller('emojiController', ['$scope', function($scope) {
+
+    $scope.emojiMessage={};
+}]);
