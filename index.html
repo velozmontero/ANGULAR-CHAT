@@ -11,33 +11,56 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+        
+        <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css">
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
         
         <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Tangerine">
-
+        
         <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-        <link type="text/stylesheet" rel="stylesheet" href="http://code.ionicframework.com/1.1.1/css/ionic.min.css" />
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.7/angular.min.js"></script>
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.7/angular-sanitize.min.js"></script>
+        
+        <!-- load angular -->
+        <script src="//code.angularjs.org/1.4.0/angular.js"></script>
+
+        <!-- load ngmessages -->
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular-messages.js"></script>
+        
 	</head>
 	<body>
 		<!-- Header -->
-        <div id="access" name="access" class="container-fluid">
+        <div id="access" name="access" class="container-fluid" ng-app="app" ng-controller="MainCtrl as main">
             <header id="header">
                 <div class="image" id="smily-face"></div>
 				<h1 class="hi">Hi, there!</h1>
 			</header>
+            
             <div id="enterDiv">
               <div id="ncont" name="ncont">
-                <input class="name-text enter" type='text' id='nameInput' placeholder='Please Enter Name'>
+                  <form name="userForm">
+                    <input
+                        class="name-text enter form-control" 
+                        type='text' 
+                        id='nameInput'
+                        name="name"   
+                        ng ng-model="main.name"
+                        ng-minlength="2"
+                        ng-maxlength="10"   
+                        required>
+                      
+                        <div class="help-block" ng-messages="userForm.name.$error" ng-if="userForm.name.$touched">
+                            <p style="text-align: center;" ng-message="minlength">Your name is too short</p>
+                            <p style="text-align: center;" ng-message="maxlength">Your name is too long</p>
+                            <p style="text-align: center;" ng-message="required">Please Enter Name</p>
+                        </div>
+                  </form>      
               </div>
             </div> 
         </div>
 			
-        <div class="container-fluid hidden col-lg-4 col-xs-12" id="granted" name="granted">  
+        <div class="container-fluid hidden col-lg-4 col-xs-12" id="granted" name="granted" ng-app="emojiApp" ng-controller="emojiCtrl as emoji">  
             <div id="nav" name="nav">
               <div class="slide-in"></div>
             </div>
@@ -52,16 +75,12 @@
                  <div id='messagesDiv'></div>
                  <div class="typing"></div>
             </div>
+            <md-button class="md-icon-button md-primary" aria-label="Settings" id="emojiBtn">
+                <md-icon md-svg-icon="img/icons/menu.svg"></md-icon>
+            </md-button>
             
-            
-            <div id="myinputmsg">
-                <div emoji-form emoji-message="emojiMessage">
-
-                    <button id="emojibtn">
-                        <i class="icon icon-emoji"></i>
-                    </button>
-                    <input class="txt-in send" type='text' id='messageInput' ng-model="emojiMessage.messagetext" placeholder='Message...'>  
-                </div>    
+            <div id="myinputmsg">    
+                <input class="txt-in send" type='text' id='messageInput' placeholder='Message...'>  
             </div>
        </div>
 
@@ -85,17 +104,20 @@
         </audio> 
 
     <!-- Scripts -->
-       
+        <!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+        <script src="assets/js/main.js"></script>
+
         <!-- Latest compiled and minified JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
-        <script src='js/firebase.js'></script>   
+        <script src='js/firebase.js'></script>  
+        <script src="js/respond.min.js"></script>
         <script src="js/html5shiv.js"></script>
-         <!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-        <script src="assets/js/main.js"></script>
-        <script src="script.js"></script>
     
-        <script type="text/javascript" src="dist/js/config.js"></script>
-        <script type="text/javascript" src="dist/js/emoji.min.js"></script>
-        <script type="text/javascript" src="js/angular-emoji.js"></script>
+        <!-- Angular Material Library -->
+        <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js"></script>
+        <!-- load our custom app -->
+        <script src="app.js"></script>
+        <script src="script.js"></script>
+
 	</body>
 </html>

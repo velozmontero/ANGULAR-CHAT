@@ -1,6 +1,7 @@
 
 $(document).ready(function(){
-  
+    $('#nameInput').blur();
+    
     resizeChat();
   
     $( window ).resize(function(){
@@ -14,9 +15,9 @@ $(document).ready(function(){
         
         var nav= $('#nav').height();
         
-        var emojiDiv= $('#emojiDiv').height();
-  
-        var mHeight= windowHeight-mInput-nav-emojiDiv;
+        var emojiBtn= $('#emojiBtn').height();
+        
+        var mHeight= windowHeight - mInput - nav - emojiBtn;
             
         $('#message-holder').css('height', mHeight);
         
@@ -28,8 +29,6 @@ $(document).ready(function(){
         $("#wrapper").toggleClass("toggled");
         $(this).toggleClass("rotate-180");
     });
-    
-    
     
     var num1= Math.floor (Math.random()*9 + 1).toString();
     var num2= Math.floor (Math.random()*9 + 1).toString();

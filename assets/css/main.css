@@ -15,7 +15,6 @@
 		border: 0;
 		font-size: 100%;
 		font: inherit;
-		vertical-align: baseline;
 	}
     .hi{text-align: center !important;}
 	article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
@@ -541,7 +540,7 @@
 
 	ul {
 		list-style: disc;
-		margin: 0 0 0 0;
+		margin: 0 0 2em 0;
 		padding-left: 1em;
 	}
 
@@ -1228,8 +1227,7 @@
     padding:17px 20px !important;
     text-align: left;
     text-decoration:none;      
-}
-    
+}    
 .txt-in:hover {
     background-color:rgba(153, 153, 153, 0.27);
 }
@@ -1248,10 +1246,10 @@
     padding:17px 80px !important;
     text-align: center;
     text-decoration:none;    
-}    
-.name-text:focus{
-    border-color: #45CAFF !important;
-} 
+}  
+.name-text:focus {
+    border-color:#42E0E0!important;
+}
 .name-text:hover {
     background-color:rgba(153, 153, 153, 0.27);
 }
@@ -1471,4 +1469,10 @@
     padding: 0 !important;
     overflow-x: hidden;
     overflow-y: hidden;
+}
+
+.md-button.md-fab.md-mini {
+      line-height: 4rem;
+      width: 4rem;
+      height: 4rem;
 }
